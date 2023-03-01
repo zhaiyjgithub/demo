@@ -5,11 +5,12 @@ on:
     branches: [ "main" ]
 jobs:
   build:
-    name: Build and analyse default scheme using xcodebuild command
+    name: auto build
     runs-on: [self-hosted, macOS]
 
     steps:
+      - name: message
+        run: echo "before to build"
       - name: Build
-        run: 
-          yarn build:ios_testflight
+        run: yarn build:ios_testflight
          
