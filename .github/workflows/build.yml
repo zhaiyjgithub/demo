@@ -10,5 +10,5 @@ jobs:
 
     steps:
       - name: message
-        run: echo "before to build"
+        run: pwd
          
