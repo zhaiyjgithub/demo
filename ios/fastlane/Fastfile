@@ -1,0 +1,14 @@
+lane :testflight_build do
+      increment_build_number_in_plist(scheme: 'demo')
+      sync_code_signing(type: "appstore", scheme: 'demo')
+      build_app(scheme: "demo")
+      upload_to_testflight
+      appcenter_upload(
+        api_token: "64e6e61ba91ea04a7677ceb672f113c3905bc931",
+        owner_name: "yuanji.zhai-mdland.com",
+        owner_type: "user",
+        app_name: "demo",
+        file: "./demo.ipa",
+        notify_testers: true
+      )
+end
