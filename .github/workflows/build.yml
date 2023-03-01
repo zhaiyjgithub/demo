@@ -5,14 +5,16 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-    name: Build and analyse default scheme using xcodebuild command
-    runs-on: macos-latest
-
+  ios-build:
+    name: IOS Production Build
+    runs-on: macOS-latest
+    defaults:
+      run:
+        working-directory: ios
+        
     steps:
-      - name: Enter into work space
-        run: cd ../../../../
-      - name: Get workspace path
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+      - name: path
         run: pwd
-      - name: Build
-        run: yarn build:ios_testflight
+        
