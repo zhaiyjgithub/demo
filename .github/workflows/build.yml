@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Enter into work space
-        run: cd /Users/yuanjizhai/Documents/project/demo
+        run: cd / && cd /Users/yuanjizhai/Documents/project/demo
       - name: Get workspace path
         run: pwd
       - name: Build
