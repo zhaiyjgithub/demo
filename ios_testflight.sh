@@ -1,4 +1,3 @@
 echo "build ios testflight"
 
-yarn 
-
+bundle exec fastlane testflight_build
