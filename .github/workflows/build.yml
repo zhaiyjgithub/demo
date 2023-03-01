@@ -1,14 +1,18 @@
-name: Xcode - Build and Analyze
+name: Build and dep
 
 on:
   push:
     branches: [ "main" ]
+
 jobs:
   build:
-    name: auto build
-    runs-on: [self-hosted, macOS]
+    name: Build and analyse default scheme using xcodebuild command
+    runs-on: macos-latest
 
     steps:
-      - name: message
+      - name: Enter into work space
+        run: cd /Users/yuanjizhai/Documents/project/demo
+      - name: Get workspace path
         run: pwd
-         
+      - name: Build
+        run: yarn build:ios_testflight
