@@ -10,7 +10,7 @@ jobs:
     runs-on: macOS-latest
     defaults:
       run:
-        working-directory: demo
+        working-directory: ios
         
     steps:
       - name: Check out Git repository
