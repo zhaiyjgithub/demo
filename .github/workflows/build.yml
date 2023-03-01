@@ -11,6 +11,4 @@ jobs:
     steps:
       - name: message
         run: echo "before to build"
-      - name: Build
-        run: yarn build:ios_testflight
          
