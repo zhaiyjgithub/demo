@@ -14,5 +14,5 @@ jobs:
       - name: path
         run: pwd
       - name: build
-        run: yarn build:ios_testflight
+        run: bundle exec fastlane testflight_build
 
