@@ -11,8 +11,12 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v3
-      - name: path
-        run: pwd
+      - name: Setup Ruby
+          uses: ruby/setup-ruby@v1
+          with:
+            ruby-version: '3.2.1'
+      - name: Setup Fastlane
+        run: bundle install
       - name: build
         run: bundle exec fastlane testflight_build
 
