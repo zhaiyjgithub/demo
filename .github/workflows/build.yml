@@ -8,6 +8,7 @@ jobs:
   ios-build:
     name: IOS Production Build
     runs-on: macOS-latest
+    working-directory: "./ios"
     steps:
       - name: checkout repo
         uses: actions/checkout@v3
