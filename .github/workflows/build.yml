@@ -19,11 +19,11 @@ jobs:
           ruby-version: '3.2.1'
           bundler-cache: true
       - name: install bundler
-        run:
+        run: |
           cd ios
           gem install bundler
       - name: install gems
-        run:
+        run: |
           cd ios
           bundle install
       - name: exec fastlane
