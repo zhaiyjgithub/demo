@@ -8,9 +8,6 @@ jobs:
   ios-build:
     name: IOS Production Build
     runs-on: macOS-latest
-    defaults:
-      run:
-        working-directory: ./ios
     steps:
       - name: checkout repo
         uses: actions/checkout@v3
@@ -22,7 +19,7 @@ jobs:
           ruby-version: '3.2.1'
           bundler-cache: true
       - name: install bundler
-        run: gem install bundler
+        run: cd ios && gem install bundler
       - name: install gems
         run: bundle install
       - uses: maierj/fastlane-action@v3.0.0
