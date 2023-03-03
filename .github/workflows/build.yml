@@ -9,18 +9,17 @@ jobs:
     name: IOS Production Build
     runs-on: macOS-latest
     steps:
-      - name: Check out Git repository
+      - name: checkout repo
         uses: actions/checkout@v3
+      - name: Cancel Previous Runs
+      uses: styfle/cancel-workflow-action@0.9.1
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2.1'
-          bundler-cache: true
-          working-directory: 'ios'
       - name: install bundler
-        run:
-          gem install bundler
-      - name: install
+        run: gem install bundler
+      - name: install gems
         run: bundle install
       - name: build
         run: bundle exec fastlane testflight_build
