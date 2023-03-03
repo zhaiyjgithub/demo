@@ -27,5 +27,7 @@ jobs:
           cd ios
           bundle install
       - name: exec fastlane
-        run: bundle exec fastlane testflight_build
+        run: |
+          cd ios
+          bundle exec fastlane testflight_build
 
